@@ -5,14 +5,12 @@
 ## Lab 1
 
 ### App Description
-`TODO://` Basic Flashcard app that displays a question and answer after the user taps the card, along with buttons for a multiple choice option.
+Basic Flashcard app that displays a question and answer after the user taps the card, along with buttons for a multiple choice option.
 
 ### App Walk-though
-`TODO://`
 
 <img src="https://github.com/mayakuzak/Flashcards/raw/main/Lab1.gif" width=200><br>
 
-`TODO://` 
 
 ## Required
 - [x] Create New Project in Xcode
