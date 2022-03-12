@@ -36,6 +36,15 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iRk-wQ-Pxq">
+                                        <rect key="frame" x="264" y="121" width="44" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="✏️"/>
+                                        <connections>
+                                            <segue destination="To9-Xy-gja" kind="show" identifier="EditSegue" id="cJk-o1-5SO"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
@@ -46,7 +55,7 @@
                                 <color key="tintColor" red="0.43892118908400019" green="0.47553797166141654" blue="0.50517328006705053" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Río de Janerio">
-                                    <fontDescription key="titleFontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="20"/>
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="tappedOne:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ta6-nn-xRp"/>
@@ -59,7 +68,7 @@
                                 <color key="tintColor" red="0.4389211891" green="0.47553797170000001" blue="0.50517328009999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Brasília">
-                                    <fontDescription key="titleFontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="20"/>
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="tappedTwo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wGw-CB-CR8"/>
@@ -72,10 +81,23 @@
                                 <color key="tintColor" red="0.4389211891" green="0.47553797170000001" blue="0.50517328009999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="São Paulo">
-                                    <fontDescription key="titleFontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="20"/>
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="tappedThree:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wav-iK-aIU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kxH-Wg-MFe">
+                                <rect key="frame" x="317" y="804" width="43" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.86784607170000005" green="0.94391125440000001" blue="0.99216490980000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" red="0.4389211891" green="0.47553797170000001" blue="0.50517328009999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="+" cornerStyle="medium">
+                                    <fontDescription key="titleFontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="27"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="To9-Xy-gja" kind="show" id="uXF-tu-lBg"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -87,6 +109,7 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="addButton" destination="kxH-Wg-MFe" id="SOo-1k-GOh"/>
                         <outlet property="answerLabel" destination="tlk-uJ-anp" id="zgi-Ry-DQn"/>
                         <outlet property="buttonOne" destination="LDe-Dk-E2Y" id="SRK-17-enp"/>
                         <outlet property="buttonThree" destination="2kN-sY-wBk" id="eQT-FZ-hFQ"/>
@@ -104,7 +127,89 @@
             </objects>
             <point key="canvasLocation" x="11.594202898550726" y="79.6875"/>
         </scene>
+        <!--Creation View Controller-->
+        <scene sceneID="MXW-OP-BOB">
+            <objects>
+                <viewController id="qtV-gC-WhR" customClass="CreationViewController" customModule="Flashcards" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YfU-og-xaI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Answer" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="krP-go-xji">
+                                <rect key="frame" x="36" y="360" width="328" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Extra Answer" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="okx-IZ-9Nd">
+                                <rect key="frame" x="36" y="487" width="328" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Extra Answer" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X55-Ww-8RR">
+                                <rect key="frame" x="36" y="618" width="328" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Question" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4OC-G2-wB3">
+                                <rect key="frame" x="36" y="237" width="328" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="r9u-Uk-Rw1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ogx-AP-WdO">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="wVV-CH-smE">
+                            <connections>
+                                <action selector="tappedOnCancel:" destination="qtV-gC-WhR" id="ChX-99-00M"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="gRa-Qh-kpJ">
+                            <connections>
+                                <action selector="tappedOnDone:" destination="qtV-gC-WhR" id="ODX-vi-Su6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="answerText" destination="krP-go-xji" id="MrY-Xc-uRd"/>
+                        <outlet property="cancelButton" destination="wVV-CH-smE" id="Mie-66-qOJ"/>
+                        <outlet property="extraAnswer1" destination="okx-IZ-9Nd" id="zqI-na-0nJ"/>
+                        <outlet property="extraAnswer2" destination="X55-Ww-8RR" id="sZL-cf-zjK"/>
+                        <outlet property="questionText" destination="4OC-G2-wB3" id="q5H-W1-X1c"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W24-VL-T5m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1633.3333333333335" y="79.6875"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="6MH-9h-w1Q">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="To9-Xy-gja" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="zUi-65-uR5"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jn6-Xf-bJq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qtV-gC-WhR" kind="relationship" relationship="rootViewController" id="GDk-nw-sGo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1BY-4p-MTi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="723.1884057971015" y="79.6875"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="cJk-o1-5SO"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
