@@ -31,6 +31,8 @@ class ViewController: UIViewController {
     var flashcards = [Flashcard]()
     var currentIndex = 0
     var correctAnswerButton: UIButton!
+    var wrong1 = ""
+    var wrong2 = ""
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -313,6 +315,8 @@ class ViewController: UIViewController {
         
         let buttons = [buttonOne, buttonTwo, buttonThree].shuffled()
         let answers = [currentFlashcard.answer, currentFlashcard.extra1, currentFlashcard.extra2].shuffled()
+        wrong1 = currentFlashcard.extra1
+        wrong2 = currentFlashcard.extra2
 
         for (button,answer) in zip(buttons,answers) {
             button?.setTitle(answer, for: .normal)
@@ -323,7 +327,7 @@ class ViewController: UIViewController {
         }
         
 
-        //.setTitle(currentFlashcard.extra1, for: .normal)
+        //buttonOne.setTitle(currentFlashcard.extra1, for: .normal)
         //buttonTwo.setTitle(currentFlashcard.answer, for: .normal)
         //buttonThree.setTitle(currentFlashcard.extra2, for: .normal)
     }
@@ -356,8 +360,8 @@ class ViewController: UIViewController {
         if segue.identifier == "EditSegue" {
             creationController.initialQuestion = questionLabel.text
             creationController.initialAnswer = answerLabel.text
-            creationController.initialExtraAnswer1 = buttonOne.currentTitle
-            creationController.initialExtraAnswer2 = buttonThree.currentTitle
+            creationController.initialExtraAnswer1 = wrong1
+            creationController.initialExtraAnswer2 = wrong2
             print(answerLabel.text)
             print(buttonOne.currentTitle)
         }
