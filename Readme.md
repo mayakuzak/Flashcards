@@ -5,6 +5,7 @@
 
 ### App Walk-though
 <img src="https://github.com/mayakuzak/Flashcards/raw/main/lab4.gif" width=200><br>
+<img src="https://github.com/mayakuzak/Flashcards/raw/main/lab4pt2.gif" width=200><br>
 
 ## Required
 - [x] User should see the app icon 
